@@ -5,11 +5,6 @@
 function noSpace(x) {
   const xToArray = x.split(" ");
 
-  for (let i = 0; i < xToArray.length; i++) {
-    if (xToArray.includes("")) {
-      xToArray.pop();
-    }
-  }
   return xToArray.join("");
 
   //   shorthand
