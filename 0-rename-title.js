@@ -3,7 +3,10 @@
 // rename title from codewars to be a name of a file
 
 function title(str) {
-  return str.replace(/ /g, "-").toLowerCase() + ".js";
+  // return str.replace(/ /g, "-").toLowerCase() + ".js";
+  let processed = str.replace(/\?/g, "");
+
+  return processed.replace(/ /g, "-").toLowerCase() + ".js";
 }
 
-console.log(title("Beginner Series #3 Sum of Numbers"));
+console.log(title("Small enough?-Beginner"));
