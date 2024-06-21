@@ -4,9 +4,9 @@
 
 function title(str) {
   // return str.replace(/ /g, "-").toLowerCase() + ".js";
-  let processed = str.replace(/\?/g, "");
+  let processed = str.replace(/[?,.!@$%^&*()-+=]/g, "");
 
   return processed.replace(/ /g, "-").toLowerCase() + ".js";
 }
 
-console.log(title("Small enough?-Beginner"));
+console.log(title("Two fighters, one winner."));
