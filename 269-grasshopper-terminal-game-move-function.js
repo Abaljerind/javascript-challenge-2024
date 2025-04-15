@@ -11,4 +11,16 @@ Create a function for the terminal game that takes the current position of the h
 Example:
 move(3, 6) should equal 15
 
+Pseudocode:
+Aturannya -> hasil lemparan dadu akan digandakan (dua kali lemparan), lalu hasilnya ditambahkan ke posisi saat ini.
+
+roll * 2 + position
+
  */
+
+function move(position, roll) {
+  // return the new position
+  return roll * 2 + position;
+}
+
+console.log(move(3, 6));
