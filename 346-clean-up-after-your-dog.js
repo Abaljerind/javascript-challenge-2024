@@ -32,7 +32,7 @@ kalau cap (kapasitas) cukup, kembalikan 'Clean'
 kalau cap (kapasitas) tidak cukup, kembalikan 'Cr@p'
 kalau ada 'D', kembalikan 'Dog!!'
 
-pseudocode:
+pseudocode: punya gua yang masih salah X
 mulai
     buat variable poops untuk menyimpan hasil dari mencari @ (cr@p)
         jadikan parameter garden menjadi 1 array
@@ -46,16 +46,50 @@ mulai
         kembalikan 'Dog!!'
 selesai
 
+pembetulan dari chatgpt:
+
+mulai
+    ubah garden 2D menjadi 1D (opsional, bisa langung loop)
+    hitung jumlah cr@p (@) -> poops
+    hitung jumlah dogs (D) -> dogs
+
+    jika dogs > 0:
+        kembalikan 'Dog!!'
+    
+    jika jumlah tas (bags) = 0:
+        kembalikan 'Cr@p'
+    
+    total_capacity = bags * cap
+    
+    jika poops <= total_capacity:
+        kembalikan 'Clean'
+    selain itu:
+        kembalikan 'Cr@p'
+    
+selesai
+
 */
 
 function crap(garden, bags, cap) {
-  const poops = garden.flat().filter((crap) => crap === "@");
-  const dogs = garden.flat().filter((dog) => dog === "D");
+  // jawaban yang benar tapi salah mengerjakannya
+  // const poops = garden.flat().filter((crap) => crap === "@");
+  // const dogs = garden.flat().filter((dog) => dog === "D");
+  // if (dogs.length > 0) return "Dog!!";
+  // if (cap >= poops.length) return "Clean";
+  // return "Cr@p";
 
-  if (dogs.length > 0) return "Dog!!";
+  // cara mengerjakan yang benar sesuai dengan pseudocode diatas:
+  const newGarden = garden.flat();
 
-  if (cap >= poops.length) return "Clean";
-  return "Cr@p";
+  const poops = newGarden.filter((crap) => crap === "@").length;
+  const dogs = newGarden.filter((dog) => dog === "D").length;
+
+  if (dogs > 0) return "Dog!!";
+  if (bags === 0) return "Cr@p";
+
+  const total_capacity = bags * cap;
+
+  return poops <= total_capacity ? "Clean" : "Cr@p";
 }
 
 console.log(
